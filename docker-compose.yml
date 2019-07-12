@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+    postgres96:
+        image: postgres:9.6
+        restart: always
+
+        volumes:
+            - /var/lib/postgresql/data:/var/lib/postgresql/data
+
+        # 如果数据库不给其他应用使用，保留端口注释
+        #ports:
+        #    - 5432:5432
+
+
+    confluence:
+        image: atlassian/confluence-server:latest
+        restart: always
+
+        depends_on:
+            - postgres96
+
+        volumes:
+            - /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence
+
+        # Java 应用内存，默认是1G，用户访问量大会造成卡死状态
+        #environment:
+        #    - JVM_MINIMUM_MEMORY=1024
+        #    - JVM_MAXIMUM_MEMORY=8192
+
+        ports:
+            - 8090:8090
+            - 8091:8091
