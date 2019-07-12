@@ -50,10 +50,10 @@ CREATE USER confluence_db_user;
 CREATE DATABASE confluence_db;
 # 创建数据库
 
-GRANT ALL PRIVILEGES ON DATABASE confluence_db to confluence_db_user;
+GRANT ALL PRIVILEGES ON DATABASE confluence_db TO confluence_db_user;
 # 赋予用户权限
 
-\password confluence_db;
+\password confluence_db_user;
 # 密码
 # 确认密码
 
