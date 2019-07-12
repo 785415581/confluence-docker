@@ -33,11 +33,46 @@ docker-compose up -d
 http://192.168.1.173:8090
 ```
 
+- 创建数据库
+```bash
+docker exec -it postgres96 /bin/bash
+# 进入数据库容器 （postgre96 是数据库容器名称或者id ）
+
+su - postgres
+# 切换到数据库服务账户
+
+psql
+# 进入数据库命令行
+
+CREATE USER confluence_db_user;
+# 创建数据库用户
+
+CREATE DATABASE confluence_db;
+# 创建数据库
+
+GRANT ALL PRIVILEGES ON DATABASE confluence_db to confluence_db_user;
+# 赋予用户权限
+
+\password confluence_db;
+# 密码
+# 确认密码
+
+\q
+# 退出数据库命令行
+
+exit
+# 退出数据库服务账户
+
+exit
+# 退出登录容器
+```
 - 数据库设置
 ```
 地址：postgres96（就是yml里第一个service的名字）
 端口：5432
-数据库、用户、密码自行创建
+数据库：confluence_db
+用户：confluence_db_user
+密码：（confluence_db_user 密码）
 ```
 
 - 停止与重启
