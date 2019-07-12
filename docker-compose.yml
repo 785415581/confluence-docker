@@ -8,7 +8,7 @@ services:
         volumes:
             - /var/lib/postgresql/data:/var/lib/postgresql/data
 
-        # Èç¹ûÊı¾İ¿â²»¸øÆäËûÓ¦ÓÃÊ¹ÓÃ£¬±£Áô¶Ë¿Ú×¢ÊÍ
+        # å¦‚æœæ•°æ®åº“ä¸ç»™å…¶ä»–åº”ç”¨ä½¿ç”¨ï¼Œä¿ç•™ç«¯å£æ³¨é‡Š
         #ports:
         #    - 5432:5432
 
@@ -23,10 +23,10 @@ services:
         volumes:
             - /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence
 
-        # Java Ó¦ÓÃÄÚ´æ£¬Ä¬ÈÏÊÇ1G£¬ÓÃ»§·ÃÎÊÁ¿´ó»áÔì³É¿¨ËÀ×´Ì¬
+        # Java åº”ç”¨å†…å­˜ï¼Œé»˜è®¤æ˜¯1Gï¼Œç”¨æˆ·è®¿é—®é‡å¤§ä¼šé€ æˆå¡æ­»çŠ¶æ€
         #environment:
-        #    - JVM_MINIMUM_MEMORY=1024
-        #    - JVM_MAXIMUM_MEMORY=8192
+        #    - JVM_MINIMUM_MEMORY=1024m
+        #    - JVM_MAXIMUM_MEMORY=8192m
 
         ports:
             - 8090:8090
