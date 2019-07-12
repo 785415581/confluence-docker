@@ -25,7 +25,7 @@ docker-compose --version
 
 - 运行镜像服务
 ```bash
-docker-compose up
+docker-compose up -d
 ```
 
 - 浏览器访问服务器地址8090 端口(以下需要换成你的电脑的ip地址)，完成后续安装
