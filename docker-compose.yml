@@ -6,11 +6,11 @@ services:
         restart: unless-stopped
 
         volumes:
-            - /var/lib/postgresql/data:/var/lib/postgresql/data
+            - /home/postgresql/9.6:/var/lib/postgresql
 
         # 如果数据库不给其他应用使用，保留端口注释
         #ports:
-        #    - 5432:5432
+        #    - '5432:5432'
 
 
     confluence:
@@ -21,7 +21,7 @@ services:
             - postgres96
 
         volumes:
-            - /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence
+            - /home/atlassian/application-data/confluence:/var/atlassian/application-data/confluence
 
         # Java 应用内存，默认是1G，用户访问量大会造成卡死状态
         #environment:
@@ -29,5 +29,5 @@ services:
         #    - JVM_MAXIMUM_MEMORY=8192m
 
         ports:
-            - 8090:8090
-            - 8091:8091
+            - '8090:8090'
+            - '8091:8091'
