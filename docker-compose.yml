@@ -6,7 +6,7 @@ services:
         restart: unless-stopped
 
         volumes:
-            - /home/postgresql/9.6:/var/lib/postgresql
+            - /home/postgresql/9.6/data:/var/lib/postgresql/data
 
         # 如果数据库不给其他应用使用，保留端口注释
         #ports:
